@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Create{% endblock %}
+{% block content %}
+<form class="shape" method="POST" action="/create" name="shape">
+    <div class="this-hape">
+        <div class="header-shape">
+            Вперёд!
+        </div>
+        <div class="main-shape">
+            <div id="h-input">Введи название класса</div>
+            <input name="class-name" class="f-input">
+            <input value="0" name="class-count" class="count-stud">
+            <div id="h-input">Ученики</div>
+            <div class="students" id="stud">
+                <input class="name-input" name="i-1">
+            </div>
+        </div>
+    </div>
+    <p id="status">{% for status in state%}{{status}}<br>{% endfor %}</p>
+    <span id="button-zone">
+        <input  type="submit" value="Save class" class="shape-button" id="save-button" type="button"></input>
+    </span>
+</form>
+<script src="/static/javascript/new-input.js"></script>
+{% endblock %}

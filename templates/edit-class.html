@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Edit{% endblock %}
+{% block content %}
+<form class="shape" method="POST" action="/edit">
+    <div class="this-hape">
+        <div class="header-shape">
+            Вперёд!
+        </div>
+        <div class="main-shape">
+            <div id="h-input">Выберите класс</div>
+            <input name="class-count" class="count-stud" id="count-stud" value="0">
+            <input name="class-id" class="class-id" id="class-id" value="0">
+            <select data-value="dick" class="select-class" id="classroom-name" name="classroom-name">
+                <option value="" disabled selected>Выбери класс</option>
+                {% for class in classList%}
+                    <option value="{{class[2]}}" data-value="{{class[0]}}">{{class[1]}}</option>
+                {% endfor %}
+            </select>
+            <div id="h-input">Ученики</div>
+            <div class="students" name="classroom" id="classroom">
+            </div>
+        </div>
+    </div>
+    <p id="status">{% for status in state%}{{status}}<br>{% endfor %}</p>
+    <button class="shape-button">Continue</button>
+    <script src="/static/javascript/edit-classroom.js"></script>
+</form>
+{% endblock %}

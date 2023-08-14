@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>{% block title %} {% endblock %} - Catgo</title>
+</head>
+<body>
+    <header>
+        <div class="logo-header"><span id="one">I love</span> <span id="two">neko pelmeni</span></div>
+        <div class="menu-list">
+            <nav>
+                <ul>
+                    <a href="{{url_for('index')}}"><li>Главная</li></a>
+                    <a href="{{url_for('create')}}"><li>Создать класс</li></a>
+                    <a href="{{url_for('edit')}}"><li>Посмотреть классы</li></a>
+                    <a href="https://main.red/m/6PnX5LrA/649x488.jpg" target="_blank"><li>Анекдот</li></a>  
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <div class="main">
+          <div id="background-text">epic</div>
+          <div id="background-text-two">bebra</div>
+          <div class="forms">
+              <div id="h-form">Шаги по взрыву <span id = "through">пукана</span></div>
+              <div class="steps">
+                  <div id = "firts-round" class="round">1</div>
+                  <hr>
+                  <div id = "second-round" class="round">2</div>
+                  <hr>
+                  <div id = "third-round" class="round">3</div>
+              </div>
+              {% block content %} {% endblock %}
+          </div>
+        </div>
+        <div class="images">
+            <img src="https://abrakadabra.fun/uploads/posts/2021-12/1639427404_1-abrakadabra-fun-p-anime-tyan-s-zelenimi-volosami-1.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>
