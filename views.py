@@ -283,23 +283,3 @@ def edit():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-#classStudent = getStudentsinDatabase(classId)
- #       classStudent = [name[0] for name in classStudent]
-#        comparisonСlassroomList(classStudent,FormStudents)
-
-    #if sessions.get_session() is None: nickname = "Аноним"
-    #else: nickname = sessions.get_session()
-
-    #if request.method == "POST":
-     #   form_message = request.form["text-message"]
-      #  form_nickname = request.form["nickname-user"]
-       # nickname = form_nickname
-       #if 'username' in session and form_nickname != '' or 'username' not in session:
-     #           sessions.set_session(nickname)
-#
-       # chat.create_message(form_message, nickname)
-      #  return redirect(url_for("index"))
-
-    #messages = chat.load_chat()
