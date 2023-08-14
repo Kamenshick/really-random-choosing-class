@@ -269,9 +269,7 @@ def edit():
             deleteStudentInDatabase(classId)
             if checkNoneList(FormStudents):
                 addStudent(FormStudents, classId)
-                print('yes')
             else:
-                print('+')
                 deleteClassInDatabase(classId)
         except:
             state = ["Ошибка"]
