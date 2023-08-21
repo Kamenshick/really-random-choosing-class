@@ -22,12 +22,8 @@ class Database:
                 self.sqlite_connection.close()
                 print("Соединение с SQLite закрыто")
 
-class Session:
-    def get_session(self):
-        return session.get('username')
-    def set_session(self,user_name):
-        session['username'] = user_name
-
+database = Database()
+                
 def getClassName():
     className = request.form["class-name"]
     return str(className)
@@ -59,8 +55,6 @@ def getStudentsWithZero(classCount):
         if checkNotNone(name):
             students.append(name)
     return students
-
-database = Database()
 
 def createClassInDatabase(name):
     database.query("INSERT INTO class ('name') VALUES ('{}');".format(name))
@@ -211,18 +205,6 @@ def checkNoneList(StudentList):
     if StudentList == []:
         return False
     return True
-
-#def comparisonСlassroomList(classStudent,FormStudents):
-#    lenOriginal = len(classStudent) - 1
-#    for element in enumerate(FormStudents):
-  #      print(lenOriginal)
-    #    if lenOriginal >= element[0]:
-        #   print(element[1])
-            #print(classStudent[0])
-            #print(FormStudents)
-    #    else:
-    #        pass
-     #   print(element)
 
 app = Flask(__name__)
 
